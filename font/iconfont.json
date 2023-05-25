@@ -1,0 +1,51 @@
+{
+  "id": "4087529",
+  "name": "chatg'p't",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "1190384",
+      "name": "ok",
+      "font_class": "ok",
+      "unicode": "e8b6",
+      "unicode_decimal": 59574
+    },
+    {
+      "icon_id": "5386766",
+      "name": "跳转",
+      "font_class": "tiaozhuan",
+      "unicode": "e687",
+      "unicode_decimal": 59015
+    },
+    {
+      "icon_id": "18037350",
+      "name": "钥匙",
+      "font_class": "yuechi",
+      "unicode": "e8af",
+      "unicode_decimal": 59567
+    },
+    {
+      "icon_id": "18371131",
+      "name": "禁止",
+      "font_class": "jinzhi",
+      "unicode": "e67b",
+      "unicode_decimal": 59003
+    },
+    {
+      "icon_id": "35052225",
+      "name": "ChatGPT",
+      "font_class": "ChatGPT",
+      "unicode": "e71e",
+      "unicode_decimal": 59166
+    },
+    {
+      "icon_id": "35345258",
+      "name": "chatgpt",
+      "font_class": "chatgpt",
+      "unicode": "e877",
+      "unicode_decimal": 59511
+    }
+  ]
+}

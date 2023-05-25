@@ -6,27 +6,33 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <title>Document</title>
 
+
 <head>
     <meta charset="UTF-8">
     <!-- import CSS -->
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="./font/iconfont.css">
 </head>
 
 <body>
     <div id="app" class="box">
         <div class="header">
             <div class="icon">
-                <i class="el-icon-message-solid"></i>
+                <span class="iconfont icon-chatgpt"></span>
             </div>
             <div class="header-nav">
+                <div class="switch">
+                    <el-switch v-model="isCollapse" active-color="#13ce66" inactive-color="#ff4949">
+                    </el-switch>
+                </div>
                 <el-button size="mini">首页</el-button>
                 <el-button size="mini">防走失</el-button>
                 <div class="notion">
                     <el-carousel indicator-position="none" direction="vertical" autoplay="true">
-                        <el-carousel-item v-for="item in 4" :key="item">
-                            <h3>{{ item }}</h3>
+                        <el-carousel-item v-for="item in megs" :key="item.id">
+                            <h3>{{ item.text }}</h3>
                         </el-carousel-item>
                     </el-carousel>
                 </div>
@@ -39,8 +45,9 @@
 
                 <el-menu class="up" default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
                     <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url)">
-                        <i :class="item.icon"></i>
+                        <i class="iconfont icon-chatgpt" ></i>
                         <span slot="title">{{item.title}}</span>
+                    </el-menu-item>
                 </el-menu>
 
                 <el-menu class="down" default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
@@ -57,22 +64,14 @@
                         <span slot="title">导航二</span>
                     </el-menu-item>
                 </el-menu>
-
-
             </div>
             <div class="main">
                 <iframe :src="url" height="100%" width="100%" frameborder="0"></iframe>
             </div>
         </div>
         <div class="footer">
-            <el-menu default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
-                <el-menu-item index="1" @click="change">
-                    <i class="el-icon-menu"></i>
-                    <span slot="title">导航二</span>
-                </el-menu-item>
+            
 
-
-            </el-menu>
             <div class="footer-msg">
                 <div class="copyright">Copyright © 2023 7zbj</div>
                 <div>
@@ -90,7 +89,9 @@
 <script src="https://unpkg.com/vue@2/dist/vue.js"></script>
 <!-- import JavaScript -->
 <script src="https://unpkg.com/element-ui/lib/index.js"></script>
+<script src="./font/iconfont.js"></script>
 <script src="./data.js"></script>
+
 <script>
     new Vue({
         el: '#app',
@@ -98,26 +99,21 @@
             return {
                 visible: false,
                 isCollapse: true,
-                hide: false,
+                megs:[
+                    {
+                        id:0,
+                        text:"最新网址：https://7zbj.eu.org/（防走丢）"
+                    },{
+                        id:1,
+                        text:"最新网址：https://7zbj.eu.org/（防走丢）"
+                    }
+                ],
                 lists: l,
                 url: 'https://chat.jinshutuan.com'
 
             }
         },
         methods: {
-            change() {
-                this.isCollapse = !this.isCollapse
-                // if(this.hide){
-                //     this.isCollapse=true
-                // }else{
-                //     if(!this.isCollapse){
-                //         this.hide=!this.hide
-
-                //     }else{
-                //         this.isCollapse=!this.isCollapse
-                //     }
-                // }
-            },
             changurl(url) {
                 this.url = url
             }

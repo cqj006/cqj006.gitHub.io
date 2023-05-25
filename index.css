@@ -33,11 +33,13 @@ body {
 }
 
 .box {
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   background-color: #eee;
 }
+
+
 /* ------------------------------header-------------------------------- */
 
 .header {
@@ -64,7 +66,7 @@ body {
   margin-left: 2rem;
 }
 .notion{
-  background: #c67272;
+  background: #EBEEF5;
   width: 100%;
   height: 50%;
   margin-left: 1rem;
@@ -73,41 +75,43 @@ body {
 
 
 .el-carousel__item h3 {
-  color: #9fec42;
+  color: #F56C6C;
   font-size: 1.4rem;
   opacity: 0.75;
   /* line-height: 200px; */
   margin: 0;
 }
 
-.el-carousel__item:nth-child(2n) {
+/* .el-carousel__item:nth-child(2n) {
   background-color: #1c5db7;
 }
 
 .el-carousel__item:nth-child(2n+1) {
   background-color: #357aca;
-}
+} */
 
 /* ----------------------------contain-------------------------------------------- */
 
 .contain {
   display: flex;
   flex-grow: 1;
+  height: 100%;
   background-color: #ccc;
+  overflow: auto;
 
 }
 
 .nav {
   width: auto;
   display: flex;
+  height: 100%;
   flex-direction: column;
   justify-content: space-between
 }
 
 .up{
-  overflow: scroll;
-  flex-grow: 0 1 auto;
-
+  /* height: calc(100%-9rem); */
+  overflow: auto;
 }
 
 .el-menu-item,
@@ -127,13 +131,15 @@ body {
 
 .main {
   flex: 1;
-  background-color: #99a9bf;
+  background-color: #EBEEF5;
 }
 /* --------------ffooter=========================== */
 .footer {
   display: flex;
-  background-color: aqua;
+  background-color: #EBEEF5;
+  height: 2.5rem;
 }
+
 .footer-msg{
   display: flex;
   flex: 1;
