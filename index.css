@@ -98,10 +98,15 @@ body {
 
 .nav {
   width: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background-color: red;
 }
 
+.up{
 
+}
 
 .el-menu-item,
 .el-submenu__title {
