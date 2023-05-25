@@ -124,9 +124,9 @@ body {
   list-style: none;
 }
 
- .el-tooltip {
+ /* .el-tooltip {
   padding: 0rem 1rem !important
-}
+} */
 
 .el-menu--collapse {
   width: 5rem !important;
