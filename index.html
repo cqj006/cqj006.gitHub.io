@@ -37,15 +37,23 @@
         <div class="contain">
             <div class="nav" v-show="!hide">
                 <div class="up">
-                    <el-menu v-for="item in lists"  default-active="item.title" class="el-menu-vertical-demo" :collapse="isCollapse">
-                        <el-menu-item :index="item.title" @click="changurl('item.url')">
+                    <el-menu  default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
+                        <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url)">
                             <i :class="item.icon"></i>
                             <span slot="title">{{item.title}}</span>
                     </el-menu>
                 </div>
                 <div class="down">
-                    <el-menu default-active="2" class="el-menu-vertical-demo" :collapse="isCollapse">
+                    <el-menu  default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
                         <el-menu-item index="2">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                        </el-menu-item>
+                        <el-menu-item index="3">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                        </el-menu-item>
+                        <el-menu-item index="4">
                             <i class="el-icon-menu"></i>
                             <span slot="title">导航二</span>
                         </el-menu-item>
@@ -54,19 +62,11 @@
 
             </div>
             <div class="main">
-                <iframe :src="this.url" height="100%" width="100%" frameborder="0"></iframe>
+                <iframe :src="url" height="100%" width="100%" frameborder="0"></iframe>
             </div>
         </div>
         <div class="footer">
             <el-menu default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
-                <el-menu-item index="1" @click="change">
-                    <i class="el-icon-menu"></i>
-                    <span slot="title">导航二</span>
-                </el-menu-item>
-                <el-menu-item index="1" @click="change">
-                    <i class="el-icon-menu"></i>
-                    <span slot="title">导航二</span>
-                </el-menu-item>
                 <el-menu-item index="1" @click="change">
                     <i class="el-icon-menu"></i>
                     <span slot="title">导航二</span>
@@ -108,9 +108,19 @@
         methods: {
             change() {
                 this.isCollapse = !this.isCollapse
+                // if(this.hide){
+                //     this.isCollapse=true
+                // }else{
+                //     if(!this.isCollapse){
+                //         this.hide=!this.hide
+                        
+                //     }else{
+                //         this.isCollapse=!this.isCollapse
+                //     }
+                // }
             },
             changurl(url){
-
+                this.url=url
             }
         }
 
