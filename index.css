@@ -54,6 +54,9 @@ body {
   height: 100%;
   width: 5rem;
 }
+ .icon .icon-chatgpt{
+  font-size: 3rem;
+}
 .icon i{
   font-size: 3rem;
 }
