@@ -39,7 +39,13 @@ body {
   background-color: #eee;
 }
 
-
+/* element滚动条组件 隐藏水平滚动条 */
+.sidebar-wrapper .el-scrollbar__wrap {
+  overflow-x: hidden !important;
+}
+.is-horizontal {
+  display: none;
+}
 /* ------------------------------header-------------------------------- */
 
 .header {

@@ -48,10 +48,14 @@
             <div class="nav" v-show="!hide">
 
                 <el-menu class="up" default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
-                    <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url)">
+                    <el-scrollbar style="height: 100%">
+                        <!-- 滚动条要包裹的内容 --> 
+                        <div class="container"> <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url)">
                         <i class="iconfont icon-chatgpt"></i>
                         <span slot="title">{{item.title}}</span>
-                    </el-menu-item>
+                    </el-menu-item></div>
+                  </el-scrollbar>
+                    
                 </el-menu>
 
                 <el-menu class="down" default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
