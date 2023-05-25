@@ -27,8 +27,12 @@
                     <el-switch v-model="isCollapse" active-color="#13ce66" inactive-color="#ff4949">
                     </el-switch>
                 </div>
-                <el-button size="mini">首页</el-button>
-                <el-button size="mini">防走失</el-button>
+                <a href="https://7zbj.eu.org/"><el-button size="mini">首页</el-button></a>
+                <el-popover placement="bottom" title="关注公众号" width="200" trigger="click"
+                    content="七仔笔记">
+                    <el-button size="mini" slot="reference">防走失</el-button>
+                </el-popover>
+
                 <div class="notion">
                     <el-carousel indicator-position="none" direction="vertical" autoplay="true">
                         <el-carousel-item v-for="item in megs" :key="item.id">
@@ -45,7 +49,7 @@
 
                 <el-menu class="up" default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
                     <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url)">
-                        <i class="iconfont icon-chatgpt" ></i>
+                        <i class="iconfont icon-chatgpt"></i>
                         <span slot="title">{{item.title}}</span>
                     </el-menu-item>
                 </el-menu>
@@ -70,7 +74,7 @@
             </div>
         </div>
         <div class="footer">
-            
+
 
             <div class="footer-msg">
                 <div class="copyright">Copyright © 2023 7zbj</div>
@@ -99,13 +103,13 @@
             return {
                 visible: false,
                 isCollapse: true,
-                megs:[
+                megs: [
                     {
-                        id:0,
-                        text:"最新网址：https://7zbj.eu.org/（防走丢）"
-                    },{
-                        id:1,
-                        text:"最新网址：https://7zbj.eu.org/（防走丢）"
+                        id: 0,
+                        text: "最新网址：https://7zbj.eu.org/（防走丢）"
+                    }, {
+                        id: 1,
+                        text: "最新网址：https://7zbj.eu.org/（防走丢）"
                     }
                 ],
                 lists: l,
