@@ -1,6 +1,6 @@
 var list = [
     'https://chat.aidutu.cn/?ref=',
-    'https://cool-js.com/ai/chat/index.html?ref=',
+    'https://cool-js.com/ai/chat/?ref=',
     'https://chatgpt.qdymys.cn//?ref=',
     'https://chat.wobcw.com/?ref=',
     'https://chat.jinshutuan.com/?ref=',
@@ -8,7 +8,7 @@ var list = [
     'https://dev.yqcloud.top/?ref=',
     'https://1chat.cc/?ref=',
     'https://chat.lingdong5.com/?ref=',
-    'https://cool-js.com/ai/chat/index.html?ref=',
+    'https://cool-js.com/ai/chat/?ref=',
     'https://chatgpt.qdymys.cn//?ref=',
     'https://chat.wobcw.com/?ref=',
     'https://chat.jinshutuan.com/?ref=',
@@ -16,7 +16,7 @@ var list = [
     'https://dev.yqcloud.top/?ref=',
     'https://1chat.cc/?ref=',
     'https://chat.lingdong5.com/?ref=',
-    'https://cool-js.com/ai/chat/index.html?ref=',
+    'https://cool-js.com/ai/chat/?ref=',
     'https://chatgpt.qdymys.cn//?ref=',
     'https://chat.wobcw.com/?ref=',
     'https://chat.jinshutuan.com/?ref=',
@@ -27,13 +27,24 @@ var list = [
 ]
 var reg = /\/\/(.*?)\//;
 // var reg = /\/\/(.*?).*[\.|\/]/;
+// reg.exec(item)[0].trim()
 var l = list.map((item, index) => {
+    item=reg.exec(item)[1].trim()
+    // console.log(item);
+    var reg1=/\.(.*?)\./
+    var reg2=/(.*?)\./
+if (reg1.test(item)) {
+    item=reg1.exec(item)[1].trim()    
+}else if(reg2.test(item)){
+    item=reg2.exec(item)[1].trim()
+
+} 
     return {
-        ok:1,
-        login:1,
-        vpnnet:1,
+        ok: 1,
+        login: 1,
+        vpnnet: 1,
         id: index,
-        title: reg.exec(item)[1].trim(),
+        title: item,
         icon: 'el-icon-s-tools',
         url: item,
     }

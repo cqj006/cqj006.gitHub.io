@@ -48,7 +48,8 @@ body {
   height: 4.5rem;
   background-color: #ddd;
 }
-.headericon{
+
+.headericon {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -56,13 +57,15 @@ body {
   width: 6rem;
   background-color: #F2F6FC;
 }
-.headericon .icon{
+
+.headericon .icon {
   width: 3rem;
   height: 3rem;
   vertical-align: -0.3rem;
   fill: currentColor;
   overflow: hidden;
 }
+
 .icon {
   width: 1.7rem;
   height: 1.7rem;
@@ -70,51 +73,62 @@ body {
   fill: currentColor;
   overflow: hidden;
 }
- .icon .icon-chatgpt{
+
+.icon .icon-chatgpt {
   font-size: 3rem;
 }
-.icon i{
+
+.icon i {
   font-size: 3rem;
 }
-.header-nav{
+
+.header-nav {
   display: flex;
   align-items: center;
   width: 100%;
-  padding-left:1rem;
+  padding-left: 1rem;
   background-color: #F2F6FC;
 }
-.el-button{
+
+.el-button {
   display: flex;
   margin-left: 1.5rem;
 }
+
 .el-button span {
   font-size: 1.5rem;
 }
-.el-button--mini, .el-button--mini.is-round {
+
+.el-button--mini,
+.el-button--mini.is-round {
   padding: 0.4rem 0.5rem;
   border-radius: 0.5rem;
 }
-.font-size{
+
+.font-size {
   font-size: 2rem;
 }
-.el-popover{
+
+.el-popover {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: #f2f1f1;
-  background-color: #99a9bf; 
+  background-color: #99a9bf;
   border-radius: 2rem;
   /* width: 50%; */
 }
-h3{
+
+h3 {
   margin-bottom: 1rem;
 }
-img{
+
+img {
   width: 100%;
   /* height: 100%; */
 }
 
-.notion{
+.notion {
   background: #EBEEF5;
   width: 100%;
   height: 50%;
@@ -151,12 +165,14 @@ img{
   /* flex-wrap: nowrap; */
   justify-content: space-between;
   overflow: hidden !important;
-  
+
 }
+
 .el-menu-item.is-active {
   background-color: #ffffff !important;
 }
-.up{
+
+.up {
   /* height: calc(100%-9rem); */
   overflow: auto;
 }
@@ -168,18 +184,19 @@ img{
   list-style: none;
 }
 
- /* .el-tooltip {
+/* .el-tooltip {
   padding: 0rem 1rem !important
 } */
 
 .el-menu--collapse {
   width: 6rem !important;
-} 
+}
 
 .main {
   flex: 1;
   background-color: #EBEEF5;
 }
+
 /* --------------ffooter=========================== */
 .footer {
   display: flex;
@@ -187,13 +204,14 @@ img{
   height: 2.5rem;
 }
 
-.footer-msg{
+.footer-msg {
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
 }
-.footer-msg div{
+
+.footer-msg div {
   margin: 0rem 1rem;
 }
 
@@ -222,16 +240,18 @@ img{
 
 @media screen and (max-width: 1200px) {
   .jubao {
-      display: none;
+    display: none;
   }
 }
+
 @media screen and (max-width: 992px) {
   .ctrl-d {
-      display: none;
+    display: none;
   }
 }
+
 @media screen and (max-width: 768px) {
-.notion{
-  display: none;
-}
+  .notion {
+    display: none;
+  }
 }
