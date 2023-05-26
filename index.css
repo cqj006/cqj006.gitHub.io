@@ -54,6 +54,7 @@ body {
   align-items: center;
   height: 100%;
   width: 6rem;
+  background-color: #F2F6FC;
 }
 .headericon .icon{
   width: 3rem;
@@ -80,6 +81,7 @@ body {
   align-items: center;
   width: 100%;
   padding-left:1rem;
+  background-color: #F2F6FC;
 }
 .el-button{
   display: flex;
@@ -155,7 +157,9 @@ img{
   flex-direction: column;
   justify-content: space-between
 }
-
+.el-menu-item.is-active {
+  background-color: #ffffff !important;
+}
 .up{
   /* height: calc(100%-9rem); */
   overflow: auto;
