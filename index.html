@@ -86,18 +86,12 @@
                     </el-scrollbar>
                 </el-menu>
                 <div class="down">
-                    <el-menu default-active="1" background-color="#F2F6FC" class="el-menu-vertical-demo" :collapse="isCollapse">
-                        <el-menu-item index="2">
-                            <i class="el-icon-menu"></i>
-                            <span slot="title">导航二</span>
-                        </el-menu-item>
-                        <el-menu-item index="3">
-                            <i class="el-icon-menu"></i>
-                            <span slot="title">导航二</span>
-                        </el-menu-item>
-                        <el-menu-item index="4">
-                            <i class="el-icon-menu"></i>
-                            <span slot="title">导航二</span>
+                    <el-menu default-active="" background-color="#F2F6FC" class="el-menu-vertical-demo" :collapse="isCollapse">
+                        <el-menu-item v-for="item in auth" :index="item.id" @click="changurl(item.url)">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-ChatGPT"></use>
+                            </svg>
+                            <span slot="title">{{item.title}}</span>
                         </el-menu-item>
                     </el-menu>
                 </div>
@@ -152,8 +146,10 @@
                     }
                 ],
                 lists: l,
+                auth:a,
                 url: 'https://chat.jinshutuan.com',
                 img: img
+
 
             }
         },
@@ -161,10 +157,7 @@
             changurl(url) {
                 this.url = url
             },
-            // change(notisCollapse){
-            //     this.notisCollapse=!this.isCollapse
-            //     console.log(this.notisCollapse);
-            // }
+    
         }
 
     })
