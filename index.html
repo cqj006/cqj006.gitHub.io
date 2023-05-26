@@ -19,15 +19,19 @@
 <body>
     <div id="app" class="box">
         <div class="header">
-            <div class="headericon">
-                <svg class="icon" aria-hidden="true">
-                <use xlink:href="#icon-ChatGPT"></use>
-            </svg>
-            </div>
-            
+            <a href="https://7zbj.eu.org/">
+                <div class="headericon">
+                    <svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-ChatGPT"></use>
+                    </svg>
+                </div>
+            </a>
+
+
             <div class="header-nav">
                 <div class="switch">
-                    <el-switch v-model="isCollapse" @change="change(notisCollapse)" active-color="#13ce66" inactive-color="#ff4949">
+                    <el-switch v-model="isCollapse" @change="change(notisCollapse)" active-color="#13ce66"
+                        inactive-color="#ff4949">
                     </el-switch>
                 </div>
                 <a href="https://7zbj.eu.org/">
@@ -41,7 +45,7 @@
                         </el-button>
                     </el-popover>
                 </a>
-                
+
                 <el-popover placement="bottom" title="" width="50" trigger="click" content="七仔笔记">
                     <h2>关注公众号</h2>
                     <h3>七仔笔记</h3>
@@ -68,7 +72,7 @@
         </div>
         <div class="contain">
             <div class="nav">
-                <el-menu class="up" default-active="0" class="el-menu-vertical-demo" :collapse="isCollapse">
+                <el-menu class="up" default-active="0" background-color="#F2F6FC" class="el-menu-vertical-demo" :collapse="isCollapse">
                     <el-scrollbar style="height: 100%">
                         <!-- 滚动条要包裹的内容 -->
                         <div class="container">
@@ -82,7 +86,7 @@
                     </el-scrollbar>
                 </el-menu>
                 <div class="down">
-                    <el-menu default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
+                    <el-menu default-active="1" background-color="#F2F6FC" class="el-menu-vertical-demo" :collapse="isCollapse">
                         <el-menu-item index="2">
                             <i class="el-icon-menu"></i>
                             <span slot="title">导航二</span>
@@ -137,7 +141,7 @@
             return {
                 visible: false,
                 isCollapse: true,
-                notisCollapse:true,
+                notisCollapse: true,
                 megs: [
                     {
                         id: 0,
