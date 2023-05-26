@@ -26,8 +26,12 @@ var list = [
     'https://chat.lingdong5.com/?ref='
 ]
 var reg = /\/\/(.*?)\//;
+// var reg = /.cn|.top|.com|.cc/;
 var l = list.map((item, index) => {
     return {
+        ok:1,
+        login:1,
+        vpnnet:1,
         id: index,
         title: reg.exec(item)[1].trim(),
         icon: 'el-icon-s-tools',

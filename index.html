@@ -30,7 +30,7 @@
 
             <div class="header-nav">
                 <div class="switch">
-                    <el-switch v-model="isCollapse" @change="change(notisCollapse)" active-color="#13ce66"
+                    <el-switch v-model="notisCollapse" @change="change(notisCollapse)" active-color="#13ce66"
                         inactive-color="#ff4949">
                     </el-switch>
                 </div>
@@ -72,7 +72,8 @@
         </div>
         <div class="contain">
             <div class="nav">
-                <el-menu class="up" default-active="0" background-color="#F2F6FC" class="el-menu-vertical-demo" :collapse="isCollapse">
+                <el-menu class="up" default-active="0" background-color="#F2F6FC" class="el-menu-vertical-demo"
+                    :collapse="isCollapse">
                     <el-scrollbar style="height: 100%">
                         <!-- 滚动条要包裹的内容 -->
                         <div class="container">
@@ -80,14 +81,29 @@
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-ChatGPT"></use>
                                 </svg>
-                                <span slot="title">{{item.title}}</span>
+                                <span slot="title">{{item.title}}
+                                    <svg class="icon" v-show="item.ok" aria-hidden="true">
+                                        <use xlink:href="#icon-ok"></use>
+                                    </svg>
+                                    <!-- 登入 -->
+                                    <svg class="icon" v-show="item.login" aria-hidden="true">
+                                        <use xlink:href="#icon-yuechi"></use>
+                                    </svg>
+                                    <!-- 国际网络 -->
+                                    <svg class="icon" v-show="item.vpnnet" aria-hidden="true">
+                                        <use xlink:href="#icon-jinzhi"></use>
+                                    </svg>
+                                </span>
+                                <!-- ok -->
+
                             </el-menu-item>
                         </div>
                     </el-scrollbar>
                 </el-menu>
                 <div class="down">
-                    <el-menu default-active="" background-color="#F2F6FC" class="el-menu-vertical-demo" :collapse="isCollapse">
-                        <el-menu-item v-for="item in auth" :index="item.id" @click="changurl(item.url)">
+                    <el-menu default-active="" background-color="#F2F6FC" class="el-menu-vertical-demo"
+                        :collapse="isCollapse">
+                        <el-menu-item v-for="item in auth" :index="item.id" @click="changurl(item.url)" :key="item.id">
                             <svg class="icon" aria-hidden="true">
                                 <use xlink:href="#icon-ChatGPT"></use>
                             </svg>
@@ -135,7 +151,7 @@
             return {
                 visible: false,
                 isCollapse: true,
-                notisCollapse: true,
+                notisCollapse: false,
                 megs: [
                     {
                         id: 0,
@@ -146,7 +162,7 @@
                     }
                 ],
                 lists: l,
-                auth:a,
+                auth: a,
                 url: 'https://chat.jinshutuan.com',
                 img: img
 
@@ -157,7 +173,11 @@
             changurl(url) {
                 this.url = url
             },
-    
+            change(notisCollapse) {
+                notisCollapse?this.isCollapse=false:this.isCollapse=true
+                
+            }
+
         }
 
     })

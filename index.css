@@ -131,13 +131,6 @@ img{
   margin: 0;
 }
 
-/* .el-carousel__item:nth-child(2n) {
-  background-color: #1c5db7;
-}
-
-.el-carousel__item:nth-child(2n+1) {
-  background-color: #357aca;
-} */
 
 /* ----------------------------contain-------------------------------------------- */
 
@@ -155,7 +148,9 @@ img{
   display: flex;
   height: 100%;
   flex-direction: column;
-  justify-content: space-between
+  justify-content: space-between;
+  overflow: hidden !important;
+  
 }
 .el-menu-item.is-active {
   background-color: #ffffff !important;
