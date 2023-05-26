@@ -6,6 +6,27 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "3628777",
+      "name": "首页",
+      "font_class": "shouye",
+      "unicode": "e6f2",
+      "unicode_decimal": 59122
+    },
+    {
+      "icon_id": "12240042",
+      "name": "帮助",
+      "font_class": "bangzhu",
+      "unicode": "e6c9",
+      "unicode_decimal": 59081
+    },
+    {
+      "icon_id": "15602591",
+      "name": "微信",
+      "font_class": "weixin",
+      "unicode": "e6b8",
+      "unicode_decimal": 59064
+    },
+    {
       "icon_id": "1190384",
       "name": "ok",
       "font_class": "ok",

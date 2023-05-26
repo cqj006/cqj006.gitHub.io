@@ -13,28 +13,46 @@
     <link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
     <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="./font/iconfont.css">
     <link rel="stylesheet" href="./scrolbar.scss">
 </head>
 
 <body>
     <div id="app" class="box">
         <div class="header">
-            <div class="icon">
-                <span class="iconfont icon-chatgpt"></span>
+            <div class="headericon">
+                <svg class="icon" aria-hidden="true">
+                <use xlink:href="#icon-ChatGPT"></use>
+            </svg>
             </div>
+            
             <div class="header-nav">
                 <div class="switch">
-                    <el-switch v-model="isCollapse" active-color="#13ce66" inactive-color="#ff4949">
+                    <el-switch v-model="isCollapse" @change="change(notisCollapse)" active-color="#13ce66" inactive-color="#ff4949">
                     </el-switch>
                 </div>
-                <a href="https://7zbj.eu.org/"><el-button size="mini">首页</el-button></a>
-                <el-popover placement="bottom" title="" width="200" trigger="click" content="七仔笔记">
+                <a href="https://7zbj.eu.org/">
+                    <el-popover placement="bottom" title="" width="50" trigger="click" content="七仔笔记">
+                        <h5>首页刷新</h5>
+                        <el-button size="mini" slot="reference">
+                            <svg class="icon" aria-hidden="true">
+                                <use xlink:href="#icon-shouye"></use>
+                            </svg>
+                            <sapn>首页</sapn>
+                        </el-button>
+                    </el-popover>
+                </a>
+                
+                <el-popover placement="bottom" title="" width="50" trigger="click" content="七仔笔记">
                     <h2>关注公众号</h2>
                     <h3>七仔笔记</h3>
                     <img :src="img" alt="七仔笔记">
 
-                    <el-button size="mini" slot="reference">防走失</el-button>
+                    <el-button size="mini" slot="reference">
+                        <svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-weixin"></use>
+                        </svg>
+                        <sapn>反走丢</sapn>
+                    </el-button>
                 </el-popover>
 
                 <div class="notion">
@@ -49,13 +67,15 @@
 
         </div>
         <div class="contain">
-            <div class="nav" v-show="!hide">
+            <div class="nav">
                 <el-menu class="up" default-active="0" class="el-menu-vertical-demo" :collapse="isCollapse">
                     <el-scrollbar style="height: 100%">
                         <!-- 滚动条要包裹的内容 -->
                         <div class="container">
                             <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url)">
-                                <i class="iconfont icon-chatgpt"></i>
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-ChatGPT"></use>
+                                </svg>
                                 <span slot="title">{{item.title}}</span>
                             </el-menu-item>
                         </div>
@@ -109,6 +129,7 @@
 <script src="./font/iconfont.js"></script>
 <script src="./data.js"></script>
 
+
 <script>
     new Vue({
         el: '#app',
@@ -116,6 +137,7 @@
             return {
                 visible: false,
                 isCollapse: true,
+                notisCollapse:true,
                 megs: [
                     {
                         id: 0,
@@ -127,14 +149,18 @@
                 ],
                 lists: l,
                 url: 'https://chat.jinshutuan.com',
-                img:img
+                img: img
 
             }
         },
         methods: {
             changurl(url) {
                 this.url = url
-            }
+            },
+            // change(notisCollapse){
+            //     this.notisCollapse=!this.isCollapse
+            //     console.log(this.notisCollapse);
+            // }
         }
 
     })
