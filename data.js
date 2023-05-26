@@ -26,7 +26,7 @@ var list = [
     'https://chat.lingdong5.com/?ref='
 ]
 var reg = /\/\/(.*?)\//;
-// var reg = /.cn|.top|.com|.cc/;
+// var reg = /\/\/(.*?).*[\.|\/]/;
 var l = list.map((item, index) => {
     return {
         ok:1,
