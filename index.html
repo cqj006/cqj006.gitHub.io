@@ -32,7 +32,7 @@
                 <el-popover placement="bottom" title="" width="200" trigger="click" content="七仔笔记">
                     <h2>关注公众号</h2>
                     <h3>七仔笔记</h3>
-                    <img src="./qrcode.png" alt="七仔笔记">
+                    <img :src="img" alt="七仔笔记">
 
                     <el-button size="mini" slot="reference">防走失</el-button>
                 </el-popover>
@@ -126,7 +126,8 @@
                     }
                 ],
                 lists: l,
-                url: 'https://chat.jinshutuan.com'
+                url: 'https://chat.jinshutuan.com',
+                img:img
 
             }
         },
