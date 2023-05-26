@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./normalize.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="./font/iconfont.css">
+    <link rel="stylesheet" href="./scrolbar.scss">
 </head>
 
 <body>
@@ -28,8 +29,11 @@
                     </el-switch>
                 </div>
                 <a href="https://7zbj.eu.org/"><el-button size="mini">首页</el-button></a>
-                <el-popover placement="bottom" title="关注公众号" width="200" trigger="click"
-                    content="七仔笔记">
+                <el-popover placement="bottom" title="" width="200" trigger="click" content="七仔笔记">
+                    <h2>关注公众号</h2>
+                    <h3>七仔笔记</h3>
+                    <img src="./qrcode.png" alt="七仔笔记">
+
                     <el-button size="mini" slot="reference">防走失</el-button>
                 </el-popover>
 
@@ -46,32 +50,37 @@
         </div>
         <div class="contain">
             <div class="nav" v-show="!hide">
-
-                <el-menu class="up" default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
+                <el-menu class="up" default-active="0" class="el-menu-vertical-demo" :collapse="isCollapse">
                     <el-scrollbar style="height: 100%">
-                        <!-- 滚动条要包裹的内容 --> 
-                        <div class="container"> <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url)">
-                        <i class="iconfont icon-chatgpt"></i>
-                        <span slot="title">{{item.title}}</span>
-                    </el-menu-item></div>
-                  </el-scrollbar>
-                    
+                        <!-- 滚动条要包裹的内容 -->
+                        <div class="container">
+                            <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url)">
+                                <i class="iconfont icon-chatgpt"></i>
+                                <span slot="title">{{item.title}}</span>
+                            </el-menu-item>
+                        </div>
+                    </el-scrollbar>
                 </el-menu>
+                <div class="down">
+                    <el-menu default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
+                        <el-menu-item index="2">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                        </el-menu-item>
+                        <el-menu-item index="3">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                        </el-menu-item>
+                        <el-menu-item index="4">
+                            <i class="el-icon-menu"></i>
+                            <span slot="title">导航二</span>
+                        </el-menu-item>
+                    </el-menu>
+                </div>
 
-                <el-menu class="down" default-active="1" class="el-menu-vertical-demo" :collapse="isCollapse">
-                    <el-menu-item index="2">
-                        <i class="el-icon-menu"></i>
-                        <span slot="title">导航二</span>
-                    </el-menu-item>
-                    <el-menu-item index="3">
-                        <i class="el-icon-menu"></i>
-                        <span slot="title">导航二</span>
-                    </el-menu-item>
-                    <el-menu-item index="4">
-                        <i class="el-icon-menu"></i>
-                        <span slot="title">导航二</span>
-                    </el-menu-item>
-                </el-menu>
+
+
+
             </div>
             <div class="main">
                 <iframe :src="url" height="100%" width="100%" frameborder="0"></iframe>

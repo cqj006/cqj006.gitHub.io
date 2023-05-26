@@ -39,13 +39,8 @@ body {
   background-color: #eee;
 }
 
-/* element滚动条组件 隐藏水平滚动条 */
-.sidebar-wrapper .el-scrollbar__wrap {
-  overflow-x: hidden !important;
-}
-.is-horizontal {
-  display: none;
-}
+
+
 /* ------------------------------header-------------------------------- */
 
 .header {
@@ -70,10 +65,27 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
+  padding-left:1rem;
 }
 .el-button{
   margin-left: 2rem;
 }
+
+.el-popover{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #f2f1f1;
+  background-color: #99a9bf; 
+  border-radius: 2rem;
+}
+h3{
+  margin-bottom: 1rem;
+}
+img{
+  width: 100%;
+}
+
 .notion{
   background: #EBEEF5;
   width: 100%;
@@ -157,4 +169,15 @@ body {
 }
 .footer-msg div{
   margin: 0rem 1rem;
+}
+
+@media screen and (max-width: 1200px) {
+  .ctrl-d {
+      display: none;
+  }
+}
+@media screen and (max-width: 792px) {
+  .link-instanted {
+      display: none;
+  }
 }
