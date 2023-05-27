@@ -21,9 +21,11 @@
         <div class="header">
             <a href="https://7zbj.eu.org/">
                 <div class="headericon">
-                    <svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-ChatGPT"></use>
-                    </svg>
+                    <div class="topicon"><svg class="icon" aria-hidden="true">
+                            <use xlink:href="#icon-ChatGPT"></use>
+                        </svg></div>
+
+                    <div class="top">CHATGPT</div>
                 </div>
             </a>
 
@@ -60,9 +62,23 @@
                 </el-popover>
 
                 <div class="notion">
-                    <el-carousel indicator-position="none" direction="vertical" autoplay="true">
+
+
+                    <el-carousel indicator-position="none" direction="vertical" autoplay="true" loop="true">
                         <el-carousel-item v-for="item in megs" :key="item.id">
-                            <h3>{{ item.text }}</h3>
+                            <h3>
+                                <svg class="icon" aria-hidden="true">
+                                    <use xlink:href="#icon-tongzhi"></use>
+                                </svg>
+                                <span class="iconfont icon-jinzhi1"></span>
+                                <span v-if="item.text[1]">{{ item.text }}
+                                    <svg class="icon" aria-hidden="true">
+                                        <use :xlink:href="item.icon"></use>
+                                    </svg>
+                                </span>
+                                
+                    
+                            </h3>
                         </el-carousel-item>
                     </el-carousel>
                 </div>
@@ -92,7 +108,7 @@
                                     </svg>
                                     <!-- 国际网络 -->
                                     <svg class="icon" v-show="item.vpnnet" aria-hidden="true">
-                                        <use xlink:href="#icon-jinzhi"></use>
+                                        <use xlink:href="#icon-jinzhi1"></use>
                                     </svg>
 
                                 </sapn>
@@ -112,7 +128,7 @@
                         :collapse="isCollapse">
                         <el-menu-item v-for="item in auth" :index="item.id" @click="changurl(item.url)" :key="item.id">
                             <svg class="icon" aria-hidden="true">
-                                <use xlink:href="#icon-ChatGPT"></use>
+                                <use :xlink:href="item.icon"></use>
                             </svg>
                             <span slot="title">{{item.title}}</span>
                         </el-menu-item>
@@ -131,7 +147,7 @@
 
 
             <div class="footer-msg">
-                <div class="copyright">Copyright © 2023 7zbj</div>
+                <div class="copyright">Copyright © 2023 7zbj.eu.org</div>
                 <div class="jubao">
                     <a href="https://www.12377.cn/">网上有害信息举报</a>
                 </div>
@@ -159,15 +175,7 @@
                 visible: false,
                 isCollapse: true,
                 notisCollapse: false,
-                megs: [
-                    {
-                        id: 0,
-                        text: "最新网址：https://7zbj.eu.org/（防走丢）"
-                    }, {
-                        id: 1,
-                        text: "最新网址：https://7zbj.eu.org/（防走丢）"
-                    }
-                ],
+                megs: meg,
                 lists: l,
                 auth: a,
                 url: 'https://chat.jinshutuan.com',

@@ -6,6 +6,48 @@
   "description": "",
   "glyphs": [
     {
+      "icon_id": "2374876",
+      "name": "关于",
+      "font_class": "guanyu",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "3739985",
+      "name": "飞机",
+      "font_class": "feiji",
+      "unicode": "e614",
+      "unicode_decimal": 58900
+    },
+    {
+      "icon_id": "4460770",
+      "name": "通知",
+      "font_class": "tongzhi",
+      "unicode": "e690",
+      "unicode_decimal": 59024
+    },
+    {
+      "icon_id": "4893424",
+      "name": "禁止",
+      "font_class": "jinzhi1",
+      "unicode": "e65e",
+      "unicode_decimal": 58974
+    },
+    {
+      "icon_id": "20417726",
+      "name": "更新",
+      "font_class": "gengxin",
+      "unicode": "f308",
+      "unicode_decimal": 62216
+    },
+    {
+      "icon_id": "24670643",
+      "name": "关于我们",
+      "font_class": "guanyuwomen",
+      "unicode": "e635",
+      "unicode_decimal": 58933
+    },
+    {
       "icon_id": "3628777",
       "name": "首页",
       "font_class": "shouye",
