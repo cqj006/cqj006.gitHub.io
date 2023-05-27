@@ -210,9 +210,6 @@ img {
   /* height: calc(100%-9rem); */
   overflow: auto;
 }
-.is-horizontal /deep/  {
-  display: none;
-}
 
 .el-menu-item,
 .el-submenu__title {
@@ -226,6 +223,10 @@ img {
   line-height: 4rem;
   list-style: none;
   
+}
+.down .el-menu-item {
+  font-size: 1.6rem;
+  /* font-weight: 600; */
 }
 /* .el-tooltip {
   padding: 0rem 1rem !important
