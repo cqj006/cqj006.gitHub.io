@@ -82,7 +82,7 @@ let a = [{
     url: "./README.md",
 }, {
     id: 1,
-    title: "个人信息",
+    title: "关于我们",
     icon: '#icon-guanyuwomen',
     url: "./README.md",
 }];
