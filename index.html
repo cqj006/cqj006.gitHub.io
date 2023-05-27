@@ -4,7 +4,7 @@
     content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>Document</title>
+<title>七仔•chatGPT</title>
 
 
 <head>
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <div id="app" class="box">
+    <div id="app" class="box" v-cloak>
         <div class="header">
             <a href="https://7zbj.eu.org/">
                 <div class="headericon">
@@ -25,7 +25,7 @@
                             <use xlink:href="#icon-ChatGPT"></use>
                         </svg></div>
 
-                    <div class="top">CHATGPT</div>
+                    <div class="top">七仔•chatGPT</div>
                 </div>
             </a>
 
@@ -48,10 +48,10 @@
                     </el-popover>
                 </a>
 
-                <el-popover placement="bottom" title="" width="50" trigger="hover" content="七仔笔记">
-                    <h2>关注公众号</h2>
-                    <h3>七仔笔记</h3>
-        
+                <el-popover placement="bottom" title="" width="50" trigger="click" content="七仔笔记">
+                    <h4>关注公众号</h4>
+                    <h5>七仔笔记</h5>
+
                     <img :src="img" alt="七仔笔记">
 
                     <el-button size="mini" slot="reference">
@@ -62,7 +62,7 @@
                     </el-button>
                 </el-popover>
 
-                <div class="notion">
+                <div class="notion" v-cloak>
 
 
                     <el-carousel indicator-position="none" direction="vertical" autoplay="true" loop="true">
@@ -72,14 +72,14 @@
                                     <use xlink:href="#icon-tongzhi"></use>
                                 </svg>
                                 <span class="iconfont icon-jinzhi1"></span>
-                                <span v-if="item.text[1]">{{ item.text }}
+                                <span v-if="item.text[1]" >{{ item.text }}
                                     <svg class="icon" aria-hidden="true">
                                         <use :xlink:href="item.icon"></use>
                                     </svg>
                                     <span class="iconfont icon-tongzhi"></span>
                                 </span>
-                                
-                    
+
+
                             </h3>
                         </el-carousel-item>
                     </el-carousel>
@@ -94,7 +94,7 @@
                     :collapse="isCollapse">
                     <el-scrollbar style="height: 100%">
                         <!-- 滚动条要包裹的内容 -->
-                        <div class="container">
+                        <div class="container" v-cloak>
                             <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url)">
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-ChatGPT"></use>
@@ -115,7 +115,7 @@
 
                                 </sapn>
 
-                                <span slot="title">{{item.title}}
+                                <span slot="title" >{{item.title}}
 
 
                                 </span>
@@ -125,14 +125,14 @@
                         </div>
                     </el-scrollbar>
                 </el-menu>
-                <div class="down">
+                <div class="down" v-cloak>
                     <el-menu default-active="" background-color="#F2F6FC" class="el-menu-vertical-demo"
                         :collapse="isCollapse">
                         <el-menu-item v-for="item in auth" :index="item.id" @click="changurl(item.url)" :key="item.id">
                             <svg class="icon" aria-hidden="true">
                                 <use :xlink:href="item.icon"></use>
                             </svg>
-                            <span slot="title">{{item.title}}</span>
+                            <span slot="title" >{{item.title}}</span>
                         </el-menu-item>
                     </el-menu>
                 </div>
@@ -170,6 +170,7 @@
 
 
 <script>
+
     new Vue({
         el: '#app',
         data: function () {
@@ -198,6 +199,7 @@
         }
 
     })
+
 </script>
 
 </html>
