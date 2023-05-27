@@ -18,25 +18,23 @@ var list = [
     'https://cool-js.com/ai/chat/?ref=010',
     'https://chatgpt.qdymys.cn//?ref=100',
     'https://chat.wobcw.com/?ref=001',
-    'https://cool-js.com/ai/chat/?ref=111',
+    'https://cool-js.com/ai/chat/?ref=110',
     'https://chatgpt.qdymys.cn//?ref=110',
     'https://chat.wobcw.com/?ref=001'
 
 ]
 //list排序
-// let templist=list.sort((a,b) =>{
-//     if(/=(\d)/.exec(a)[1]=='1'){
-//         return /=(..\d)/.exec(a)[1]-/=(..\d)/.exec(b)[1]
-//     }else if(/=(.\d)/.exec(a)[1]=='11'){
-//         return /=(..\d)/.exec(a)[1]-/=(..\d)/.exec(b)[1]
-//     }else{
-//         return /=(..\d)/.exec(b)[1]-/=(..\d)/.exec(a)[1]
-//     }
-    
-// })
+let templist=list.sort((a,b) =>{
+    // if(/=(\d)/.exec(a)[1]=='1'){
+    //     return /=(..\d)/.exec(a)[1]-/=(..\d)/.exec(b)[1]
+    // }else {
+    //     return /=(..\d)/.exec(b)[1]-/=(..\d)/.exec(a)[1]
+    // }
+    return /=(..\d)/.exec(b)[1]-/=(..\d)/.exec(a)[1]
+})
 
-// console.log(templist);
-var reg = /(https:\/\/.*)\//;
+console.log(templist);
+var reg = /https:\/\/(.*)\//;
 var l = list.map((item, index) => {
     var temp=item
      temp = reg.exec(temp)[1].trim()
