@@ -81,7 +81,8 @@
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-ChatGPT"></use>
                                 </svg>
-                                <span slot="title">{{item.title}}
+                                <sapn class="if" v-show="!isCollapse">
+                                    <!-- ok -->
                                     <svg class="icon" v-show="item.ok" aria-hidden="true">
                                         <use xlink:href="#icon-ok"></use>
                                     </svg>
@@ -93,8 +94,14 @@
                                     <svg class="icon" v-show="item.vpnnet" aria-hidden="true">
                                         <use xlink:href="#icon-jinzhi"></use>
                                     </svg>
+
+                                </sapn>
+
+                                <span slot="title">{{item.title}}
+
+
                                 </span>
-                                <!-- ok -->
+
 
                             </el-menu-item>
                         </div>
@@ -174,8 +181,8 @@
                 this.url = url
             },
             change(notisCollapse) {
-                notisCollapse?this.isCollapse=false:this.isCollapse=true
-                
+                notisCollapse ? this.isCollapse = false : this.isCollapse = true
+
             }
 
         }

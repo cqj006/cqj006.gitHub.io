@@ -1,50 +1,60 @@
 var list = [
-    'https://chat.aidutu.cn/?ref=',
-    'https://cool-js.com/ai/chat/?ref=',
-    'https://chatgpt.qdymys.cn//?ref=',
-    'https://chat.wobcw.com/?ref=',
-    'https://chat.jinshutuan.com/?ref=',
-    'https://f1.xjai.cc/?ref=',
-    'https://dev.yqcloud.top/?ref=',
-    'https://1chat.cc/?ref=',
-    'https://chat.lingdong5.com/?ref=',
-    'https://cool-js.com/ai/chat/?ref=',
-    'https://chatgpt.qdymys.cn//?ref=',
-    'https://chat.wobcw.com/?ref=',
-    'https://chat.jinshutuan.com/?ref=',
-    'https://f1.xjai.cc/?ref=',
-    'https://dev.yqcloud.top/?ref=',
-    'https://1chat.cc/?ref=',
-    'https://chat.lingdong5.com/?ref=',
-    'https://cool-js.com/ai/chat/?ref=',
-    'https://chatgpt.qdymys.cn//?ref=',
-    'https://chat.wobcw.com/?ref=',
-    'https://chat.jinshutuan.com/?ref=',
-    'https://f1.xjai.cc/?ref=',
-    'https://dev.yqcloud.top/?ref=',
-    'https://1chat.cc/?ref=',
-    'https://chat.lingdong5.com/?ref='
-]
-var reg = /\/\/(.*?)\//;
-// var reg = /\/\/(.*?).*[\.|\/]/;
-// reg.exec(item)[0].trim()
-var l = list.map((item, index) => {
-    item=reg.exec(item)[1].trim()
-    // console.log(item);
-    var reg1=/\.(.*?)\./
-    var reg2=/(.*?)\./
-if (reg1.test(item)) {
-    item=reg1.exec(item)[1].trim()    
-}else if(reg2.test(item)){
-    item=reg2.exec(item)[1].trim()
+    'https://chat.aidutu.cn/?ref=100',
+    'https://cool-js.com/ai/chat/?ref=010',
+    'https://chatgpt.qdymys.cn//?ref=100',
+    'https://chat.wobcw.com/?ref=001',
+    'https://cool-js.com/ai/chat/?ref=010',
+    'https://chatgpt.qdymys.cn//?ref=100',
+    'https://chat.wobcw.com/?ref=001',
+    'https://cool-js.com/ai/chat/?ref=010',
+    'https://chatgpt.qdymys.cn//?ref=100',
+    'https://chat.wobcw.com/?ref=001',
+    'https://cool-js.com/ai/chat/?ref=010',
+    'https://chatgpt.qdymys.cn//?ref=100',
+    'https://chat.wobcw.com/?ref=001',
+    'https://cool-js.com/ai/chat/?ref=010',
+    'https://chatgpt.qdymys.cn//?ref=100',
+    'https://chat.wobcw.com/?ref=001',
+    'https://cool-js.com/ai/chat/?ref=010',
+    'https://chatgpt.qdymys.cn//?ref=100',
+    'https://chat.wobcw.com/?ref=001',
+    'https://cool-js.com/ai/chat/?ref=111',
+    'https://chatgpt.qdymys.cn//?ref=110',
+    'https://chat.wobcw.com/?ref=001'
 
-} 
+]
+//list排序
+// let templist=list.sort((a,b) =>{
+//     if(/=(\d)/.exec(a)[1]=='1'){
+//         return /=(..\d)/.exec(a)[1]-/=(..\d)/.exec(b)[1]
+//     }else if(/=(.\d)/.exec(a)[1]=='11'){
+//         return /=(..\d)/.exec(a)[1]-/=(..\d)/.exec(b)[1]
+//     }else{
+//         return /=(..\d)/.exec(b)[1]-/=(..\d)/.exec(a)[1]
+//     }
+    
+// })
+
+// console.log(templist);
+var reg = /(https:\/\/.*)\//;
+var l = list.map((item, index) => {
+    var temp=item
+     temp = reg.exec(temp)[1].trim()
+    var reg1 = /\.(.*?)\./
+    var reg2 = /(.*?)\./
+    if (reg1.test(temp)) {
+        temp = reg1.exec(temp)[1].trim()
+    } else if (reg2.test(temp)) {
+        temp = reg2.exec(temp)[1].trim()
+
+    }
+    // console.log(Number(/=.(\d)/.exec(item)[1]));
     return {
-        ok: 1,
-        login: 1,
-        vpnnet: 1,
+        ok: Number(/=(\d)/.exec(item)[1]),
+        login: Number(/=.(\d)/.exec(item)[1]),
+        vpnnet: Number(/=..(\d)/.exec(item)[1]),
         id: index,
-        title: item,
+        title: temp,
         icon: 'el-icon-s-tools',
         url: item,
     }
