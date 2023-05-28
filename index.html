@@ -72,7 +72,7 @@
                                     <use xlink:href="#icon-tongzhi"></use>
                                 </svg>
                                 <span class="iconfont icon-jinzhi1"></span>
-                                <span v-if="item.text[1]" >{{ item.text }}
+                                <span v-if="item.text[1]">{{ item.text }}
                                     <svg class="icon" aria-hidden="true">
                                         <use :xlink:href="item.icon"></use>
                                     </svg>
@@ -91,7 +91,7 @@
         <div class="contain">
             <div class="nav">
                 <el-menu class="up" default-active="0" background-color="#F2F6FC" class="el-menu-vertical-demo"
-                    :collapse="isCollapse">
+                    :collapse="isCollapse" :collapse-transition=false>
                     <el-scrollbar style="height: 100%">
                         <!-- 滚动条要包裹的内容 -->
                         <div class="container" v-cloak>
@@ -115,7 +115,7 @@
 
                                 </sapn>
 
-                                <span slot="title" >{{item.title}}
+                                <span slot="title">{{item.title}}
 
 
                                 </span>
@@ -124,15 +124,15 @@
                             </el-menu-item>
                         </div>
                     </el-scrollbar>
-                </el-menu>
+                </el-menu >
                 <div class="down" v-cloak>
                     <el-menu default-active="" background-color="#F2F6FC" class="el-menu-vertical-demo"
-                        :collapse="isCollapse">
+                        :collapse="isCollapse" :collapse-transition=false>
                         <el-menu-item v-for="item in auth" :index="item.id" @click="changurl(item.url)" :key="item.id">
                             <svg class="icon" aria-hidden="true">
                                 <use :xlink:href="item.icon"></use>
                             </svg>
-                            <span slot="title" >{{item.title}}</span>
+                            <span slot="title">{{item.title}}</span>
                         </el-menu-item>
                     </el-menu>
                 </div>
