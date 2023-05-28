@@ -23,6 +23,11 @@
 .el-menu-vertical-demo:not(.el-menu--collapse) {
   width: 16rem;
   /* min-height: 100vh; */
+  transition: width 0.15s;
+  -webkit-transition: width 0.15s;
+  -moz-transition: width 0.15s;
+  -webkit-transition: width 0.15s;
+  -o-transition: width 0.15s;
 }
 
 html,
@@ -209,9 +214,10 @@ img {
   /* flex-wrap: nowrap; */
   justify-content: space-between;
   overflow: hidden !important;
+  
 
 }
-.el-menu{
+.el-aside{
   transition: width 0.15s;
   -webkit-transition: width 0.15s;
   -moz-transition: width 0.15s;
