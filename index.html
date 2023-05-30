@@ -95,7 +95,8 @@
                     <el-scrollbar style="height: 100%">
                         <!-- 滚动条要包裹的内容 -->
                         <div class="container" v-cloak>
-                            <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url)">
+                            <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url,item.vpnnet)">
+                  
                                 <svg class="icon" aria-hidden="true">
                                     <use xlink:href="#icon-ChatGPT"></use>
                                 </svg>
@@ -109,6 +110,7 @@
                                         <use xlink:href="#icon-yuechi"></use>
                                     </svg>
                                     <!-- 国际网络 -->
+                                
                                     <svg class="icon" v-show="item.vpnnet" aria-hidden="true">
                                         <use xlink:href="#icon-jinzhi1"></use>
                                     </svg>
@@ -128,7 +130,7 @@
                 <div class="down" v-cloak>
                     <el-menu default-active="" background-color="#F2F6FC" class="el-menu-vertical-demo"
                         :collapse="isCollapse" :collapse-transition=false>
-                        <el-menu-item v-for="item in auth" :index="item.id" @click="changurl(item.url)" :key="item.id">
+                        <el-menu-item v-for="item in auth" :index="item.id" @click="changurl(item.url,'0')" :key="item.id">
                             <svg class="icon" aria-hidden="true">
                                 <use :xlink:href="item.icon"></use>
                             </svg>
@@ -188,8 +190,15 @@
             }
         },
         methods: {
-            changurl(url) {
-                this.url = url
+            changurl(url,v) {
+                if(v=='0'){
+                    this.url = url
+                }else{
+                    // document.createElement('')
+                    // this.url = url
+                    window.open(url); 
+                }
+                
             },
             change(notisCollapse) {
                 notisCollapse ? this.isCollapse = false : this.isCollapse = true

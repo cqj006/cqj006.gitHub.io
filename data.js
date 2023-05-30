@@ -1,21 +1,92 @@
-var list = [
-'https://chat.jinshutuan.com/?ref=100',
-'https://chat.aidutu.cn/?ref=010',
-'https://cool-js.com/ai/chat/index.html?ref=100',
-'https://chatgpt.qdymys.cn//?ref=100',
-'https://chat.wobcw.com/?ref=100',
-'https://f1.xjai.cc/?ref=100',
-'https://dev.yqcloud.top/?ref=100',
-'https://chat.lingdong5.com/?ref=001',
-'https://ai.hxkj.vip/?ref=100',
-'https://chatbot.theb.ai/?ref=100',
-'https://www.promptboom.com/?ref=100',
-'https://chat.gptplus.one/?ref=100',
-'https://smart-chat.xiami.one/?ref=100',
-'https://chat19.xeasy.me/?ref=100',
-'https://xc.com/?ref=100',
-
-]
+var list = [{
+    o: '001',
+    title: 'jinshutuan',
+    url: 'https://chat.jinshutuan.com/',
+},{
+    o: '001',
+    title: 'aabiji',
+    url: 'https://chatmindai.aabiji.com/',
+},{
+    o: '001',
+    title: 'extkj ',
+    url: 'https://chat.extkj.cn/',
+},{
+    o: '001',
+    title: 'waixingyun',
+    url: 'https://chat.waixingyun.cn/',
+},{
+    o: '001',
+    title: 'aidutu',
+    url: 'https://chat.aidutu.cn/',
+},{
+    o: '001',
+    title: 'cool-js',
+    url: 'https://cool-js.com/ai/chat/index.html',
+},{
+    o: '001',
+    title: 'wobcw  ',
+    url: 'https://chat.wobcw.com',
+},{
+    o: '001',
+    title: 'lingdong5',
+    url: 'https://chat.lingdong5.com/',
+},{
+    o: '001',
+    title: 'hxkj',
+    url: 'https://ai.hxkj.vip/',
+},{
+    o: '100',
+    title: 'scorpii',
+    url: 'https://chat.scorpii.net/',
+},{
+    o: '001',
+    title: 'extkj',
+    url: 'https://chat.extkj.cn/',
+},{
+    o: '001',
+    title: 'aicorehq  ',
+    url: 'https://aicorehq.com/',
+},{
+    o: '001',
+    title: 'jubianxingqiu  ',
+    url: 'https://chat.jubianxingqiu.com/',
+},{
+    o: '101',
+    title: 'littlewheat',
+    url: 'https://chat.littlewheat.com/',
+},{
+    o: '010',
+    title: 'xboat',
+    url: 'https://box.xboat.cc/',
+},{
+    o: '001',
+    title: 'nbchat',
+    url: 'https://nbchat.github.io/ai/',
+},{
+    o: '001',
+    title: 'extkj',
+    url: 'https://chat.extkj.cn',
+},{
+    o: '001',
+    title: 'bnu120',
+    url: 'https://chat.4.bnu120.space',
+},{
+    o: '001',
+    title: 'askgpt7',
+    url: 'https://xr6a.askgpt7.com/c.html',
+},{
+    o: '001',
+    title: 'newstop',
+    url: 'http://chat.newstop.asia/',
+},{
+    o: '100',
+    title: 'moeyy',
+    url: 'https://moeyy.cn/chatgpt/',
+},{
+    o: '011',
+    title: 'bo-e',
+    url: 'https://chat.bo-e.com/',
+}]
 let meg=[
     {
         id: 0,
@@ -31,43 +102,28 @@ let meg=[
     }, {
         id: 2,
         icon:'#icon-jinzhi1',
-        text: "需国际网络进行访问"
+        text: "需打开新页面进行访问"
     }
 ];
 //list排序
 let templist=list.sort((a,b) =>{
-    // if(/=(\d)/.exec(a)[1]=='1'){
-    //     return /=(..\d)/.exec(a)[1]-/=(..\d)/.exec(b)[1]
-    // }else {
-    //     return /=(..\d)/.exec(b)[1]-/=(..\d)/.exec(a)[1]
-    // }
-    return /=(..\d)/.exec(b)[1]-/=(..\d)/.exec(a)[1]
+    return a.o-b.o
 })
 
-console.log(templist);
-var reg = /(https:\/\/(.*))\//;
+// console.log(templist);
 var l = list.map((item, index) => {
-    var temp=item
-     temp = reg.exec(temp)[2].trim()
-    var reg1 = /\.(.*?)\./
-    var reg2 = /(.*?)\./
-    if (reg1.test(temp)) {
-        temp = reg1.exec(temp)[1].trim()
-    } else if (reg2.test(temp)) {
-        temp = reg2.exec(temp)[1].trim()
 
-    }
-    // console.log(Number(/=.(\d)/.exec(item)[1]));
     return {
-        ok: Number(/=(\d)/.exec(item)[1]),
-        login: Number(/=.(\d)/.exec(item)[1]),
-        vpnnet: Number(/=..(\d)/.exec(item)[1]),
+        ok: Number(/..(\d)/.exec(item.o)[1]),
+        login: Number(/.(\d)/.exec(item.o)[1]),
+        vpnnet: Number(/(\d)/.exec(item.o)[1]),
         id: index,
-        title: temp,
+        title: item.title,
         icon: 'el-icon-s-tools',
-        url: reg.exec(item)[1].trim(),
+        url: item.url,
     }
 })
+console.log(l);
 let a = [{
     id: 0,
     title: "更新文档",
