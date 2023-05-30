@@ -24,7 +24,7 @@ var list = [{
     url: 'https://cool-js.com/ai/chat/index.html',
 },{
     o: '001',
-    title: 'wobcw  ',
+    title: 'wobcw ',
     url: 'https://chat.wobcw.com',
 },{
     o: '001',
@@ -79,7 +79,7 @@ var list = [{
     title: 'moeyy',
     url: 'https://moeyy.cn/chatgpt/',
 },{
-    o: '011',
+    o: '111',
     title: 'bo-e',
     url: 'https://chat.bo-e.com/',
 }]
