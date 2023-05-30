@@ -51,10 +51,6 @@ var list = [{
     title: 'jubianxingqiu  ',
     url: 'https://chat.jubianxingqiu.com/',
 },{
-    o: '101',
-    title: 'littlewheat',
-    url: 'https://chat.littlewheat.com/',
-},{
     o: '010',
     title: 'xboat',
     url: 'https://box.xboat.cc/',
