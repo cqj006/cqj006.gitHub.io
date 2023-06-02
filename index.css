@@ -209,6 +209,7 @@ img {
   /* flex-wrap: nowrap; */
   justify-content: space-between;
   overflow: hidden !important;
+  transition: all 0.5s !important;
   
 
 }
