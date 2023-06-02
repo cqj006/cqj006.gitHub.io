@@ -123,10 +123,12 @@ body {
   display: flex;
   align-items: center;
   width: 100%;
-  padding-left: 1rem;
+  /* padding-left: 1rem; */
   background-color: #F2F6FC;
 }
-
+.header-nav>div>.el-button{
+  margin-left: 0rem !important;
+}
 .el-button {
   display: flex;
   margin-left: 1.5rem;
