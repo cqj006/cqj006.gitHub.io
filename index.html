@@ -31,18 +31,8 @@
 
 
             <div class="header-nav">
-                <div>
-                    <el-button size="mini"v-show="btnchange==1" @click="change"><svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-shouye"></use>
-                    </svg>展开</el-button>
-                    <el-button size="mini"v-show="btnchange==3" @click="change"><svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-shouye"></use>
-                    </svg>折叠</el-button>
-                    <el-button size="mini"v-show="btnchange==2" @click="change"><svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-shouye"></use>
-                    </svg>隐藏</el-button>
-                </div>
-                
+
+
 
                 <a href="https://7zbj.eu.org/">
                     <el-popover placement="bottom" title="" width="50" trigger="hover" content="七仔笔记">
@@ -97,63 +87,79 @@
 
         </div>
         <div class="contain">
-            <el-aside class="nav" :width="isCollapse ? '6rem' : '16rem' " v-show="!notis">
-                <el-menu class="up" default-active="0" background-color="#F2F6FC" class="el-menu-vertical-demo"
-                    :collapse="isCollapse" :collapse-transition=false>
-                    <el-scrollbar style="height: 100%">
-                        <!-- 滚动条要包裹的内容 -->
-                        <div class="container" v-cloak>
-                            <el-menu-item v-for="item in lists" :index="item.id" @click="changurl(item.url,item.vpnnet)" >
-                  
-                                <svg class="icon" aria-hidden="true">
-                                    <use xlink:href="#icon-ChatGPT"></use>
-                                </svg>
-                                <sapn class="if" v-show="!isCollapse">
-                                    <!-- ok -->
-                                    <svg class="icon" v-show="item.ok" aria-hidden="true">
-                                        <use xlink:href="#icon-ok"></use>
-                                    </svg>
-                                    <!-- 登入 -->
-                                    <svg class="icon" v-show="item.login" aria-hidden="true">
-                                        <use xlink:href="#icon-yuechi"></use>
-                                    </svg>
-                                    <!-- 国际网络 -->
-                                
-                                    <svg class="icon" v-show="item.vpnnet" aria-hidden="true">
-                                        <use xlink:href="#icon-jinzhi1"></use>
-                                    </svg>
+            <div>
+                <div class="fl">
 
-                                </sapn>
-
-                                <span slot="title">{{item.title}}
-
-
-                                </span>
-
-
-                            </el-menu-item>
-                        </div>
-                    </el-scrollbar>
-                </el-menu >
-                <div class="down" v-cloak>
-                    <el-menu default-active="" background-color="#F2F6FC" class="el-menu-vertical-demo"
-                        :collapse="isCollapse" :collapse-transition=false>
-                        <el-menu-item v-for="item in auth" :index="item.id" @click="changurl(item.url,'0')" :key="item.id">
-                            <svg class="icon" aria-hidden="true">
-                                <use :xlink:href="item.icon"></use>
-                            </svg>
-                            <span slot="title">{{item.title}}</span>
-                        </el-menu-item>
-                    </el-menu>
+                    <el-button size="mini" v-show="btnchange==1" @click="change"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-qiehuan"></use>
+                    </svg>展开</el-button>
+                    <el-button size="mini" v-show="btnchange==3" @click="change"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-qiehuan"></use>
+                    </svg>线路</el-button>
+                    <el-button size="mini" v-show="btnchange==2" @click="change"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-qiehuan"></use>
+                    </svg>隐藏</el-button>
                 </div>
+                <transition name="tr"> <el-aside class="nav" :width="isCollapse ? '6rem' : '16rem' " v-show="!notis">
+                        <el-menu class="up" default-active="0" background-color="#F2F6FC" class="el-menu-vertical-demo"
+                            :collapse="isCollapse" :collapse-transition=false>
+                            <el-scrollbar style="height: 100%">
+                                <!-- 滚动条要包裹的内容 -->
+                                <div class="container" v-cloak>
+                                    <el-menu-item v-for="item in lists" :index="item.id"
+                                        @click="changurl(item.url,item.vpnnet)">
+
+                                        <svg class="icon" aria-hidden="true">
+                                            <use xlink:href="#icon-ChatGPT"></use>
+                                        </svg>
+                                        <sapn class="if" v-show="!isCollapse">
+                                            <!-- ok -->
+                                            <svg class="icon" v-show="item.ok" aria-hidden="true">
+                                                <use xlink:href="#icon-ok"></use>
+                                            </svg>
+                                            <!-- 登入 -->
+                                            <svg class="icon" v-show="item.login" aria-hidden="true">
+                                                <use xlink:href="#icon-yuechi"></use>
+                                            </svg>
+                                            <!-- 国际网络 -->
+
+                                            <svg class="icon" v-show="item.vpnnet" aria-hidden="true">
+                                                <use xlink:href="#icon-jinzhi1"></use>
+                                            </svg>
+
+                                        </sapn>
+
+                                        <span slot="title">{{item.title}}
 
 
+                                        </span>
 
 
-            </el-aside>
+                                    </el-menu-item>
+                                </div>
+                            </el-scrollbar>
+                        </el-menu>
+                        <div class="down" v-cloak>
+                            <el-menu default-active="" background-color="#F2F6FC" class="el-menu-vertical-demo"
+                                :collapse="isCollapse" :collapse-transition=false>
+                                <el-menu-item v-for="item in auth" :index="item.id" @click="changurl(item.url,'0')"
+                                    :key="item.id">
+                                    <svg class="icon" aria-hidden="true">
+                                        <use :xlink:href="item.icon"></use>
+                                    </svg>
+                                    <span slot="title">{{item.title}}</span>
+                                </el-menu-item>
+                            </el-menu>
+                        </div>
+                    </el-aside></transition>
+                   
+                
+            </div>
             <div class="main">
                 <iframe :src="url" height="100%" width="100%" frameborder="0"></iframe>
+
             </div>
+
         </div>
         <div class="footer">
 
@@ -188,7 +194,7 @@
                 visible: false,
                 isCollapse: true,
                 btnchange: 1,
-                notis:false,
+                notis: false,
                 megs: meg,
                 lists: l,
                 auth: a,
@@ -199,30 +205,30 @@
             }
         },
         methods: {
-            changurl(url,v) {
-                if(v=='0'){
+            changurl(url, v) {
+                if (v == '0') {
                     this.url = url
-                }else{
+                } else {
                     // document.createElement('')
                     // this.url = url
-                    window.open(url); 
+                    window.open(url);
                 }
-                
+
             },
             change() {
-                if(this.btnchange==3){
-                    this.isCollapse=!this.isCollapse
-                    this.notis=!this.notis
-                    this.btnchange=1
-                }else if(this.btnchange==2){
-                    this.notis=!this.notis
+                if (this.btnchange == 3) {
+                    this.isCollapse = !this.isCollapse
+                    this.notis = !this.notis
+                    this.btnchange = 1
+                } else if (this.btnchange == 2) {
+                    this.notis = !this.notis
                     this.btnchange++
-                }else if(this.btnchange==1){
-                    this.isCollapse=!this.isCollapse
+                } else if (this.btnchange == 1) {
+                    this.isCollapse = !this.isCollapse
                     this.btnchange++
                 }
-                   
-                
+
+
 
 
             }

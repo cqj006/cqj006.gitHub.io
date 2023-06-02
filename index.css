@@ -126,12 +126,9 @@ body {
   /* padding-left: 1rem; */
   background-color: #F2F6FC;
 }
-.header-nav>div>.el-button{
-  margin-left: 0rem !important;
-}
 .el-button {
   display: flex;
-  margin-left: 1.5rem;
+  margin-right: 1.5rem;
   background-color: #F2F6FC;
 }
 
@@ -211,17 +208,68 @@ img {
   /* flex-wrap: nowrap; */
   justify-content: space-between;
   overflow: hidden !important;
-  transition: all 0.5s !important;
+  /* transition: all 0.5s !important; */
+  background-color: #F56C6C;
   
 
 }
-.el-aside{
+.contain>div{
+  position: relative;
+}
+.fl{
+  position: absolute;
+  left: 50%;
+  margin-left: 50%;
+  bottom: 10%;
+  z-index: 10000 !important;
+  /* background-color: #F56C6C; */
+}
+.fl .el-button{
+  padding: 0.5rem 1.5rem;
+  margin-left: 0rem;
+  border-radius: 0rem 2rem 2rem 0rem;
+  min-height: 2rem;
+  line-height: 2rem;
+  background-color: #F2F6FC;
+  color: #050505;
+}
+
+
+/* 动画 */
+@keyframes donghua {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0rem);
+  }
+}
+.tr-enter-active{
+  animation: donghua .3s linear;
+}
+.tr-leave-active {
+  animation: donghua .5s linear reverse;
+}
+
+
+/* @keyframes donghua1 {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0rem);
+  }
+} */
+
+
+
+/* .el-aside{
   transition: width 0.6s;
   -webkit-transition: width 0.6s;
   -moz-transition: width 0.6s;
   -webkit-transition: width 0.6s;
   -o-transition: width 0.6s;
-}
+} */
 .el-menu-item.is-active {
   background-color: #ffffff !important;
 }
