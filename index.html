@@ -32,9 +32,15 @@
 
             <div class="header-nav">
                 <div>
-                    <el-button size="mini"v-show="btnchange==1" @click="change">展开</el-button>
-                    <el-button size="mini"v-show="btnchange==3" @click="change">折叠</el-button>
-                    <el-button size="mini"v-show="btnchange==2" @click="change">隐藏</el-button>
+                    <el-button size="mini"v-show="btnchange==1" @click="change"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-shouye"></use>
+                    </svg>展开</el-button>
+                    <el-button size="mini"v-show="btnchange==3" @click="change"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-shouye"></use>
+                    </svg>折叠</el-button>
+                    <el-button size="mini"v-show="btnchange==2" @click="change"><svg class="icon" aria-hidden="true">
+                        <use xlink:href="#icon-shouye"></use>
+                    </svg>隐藏</el-button>
                 </div>
                 
 
