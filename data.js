@@ -3,7 +3,7 @@ var list = [{
     title: 'jinshutuan',
     url: 'https://chat.jinshutuan.com/',
 },{
-    o: '001',
+    o: '100',
     title: 'aabiji',
     url: 'https://chatmindai.aabiji.com/',
 },{
@@ -11,7 +11,7 @@ var list = [{
     title: 'extkj ',
     url: 'https://chat.extkj.cn/',
 },{
-    o: '001',
+    o: '010',
     title: 'waixingyun',
     url: 'https://chat.waixingyun.cn/',
 },{
@@ -44,14 +44,10 @@ var list = [{
     url: 'https://chat.extkj.cn/',
 },{
     o: '001',
-    title: 'aicorehq  ',
-    url: 'https://aicorehq.com/',
-},{
-    o: '001',
     title: 'jubianxingqiu  ',
     url: 'https://chat.jubianxingqiu.com/',
 },{
-    o: '010',
+    o: '001',
     title: 'xboat',
     url: 'https://box.xboat.cc/',
 },{
@@ -75,7 +71,7 @@ var list = [{
     title: 'newstop',
     url: 'http://chat.newstop.asia/',
 },{
-    o: '100',
+    o: '001',
     title: 'moeyy',
     url: 'https://moeyy.cn/chatgpt/',
 },{

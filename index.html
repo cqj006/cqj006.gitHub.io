@@ -31,9 +31,6 @@
 
 
             <div class="header-nav">
-
-
-
                 <a href="https://7zbj.eu.org/">
                     <el-popover placement="bottom" title="" width="50" trigger="hover" content="七仔笔记">
                         <h5>首页刷新</h5>
@@ -91,14 +88,20 @@
                 <div class="fl">
 
                     <el-button size="mini" v-show="btnchange==1" @click="change"><svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-qiehuan"></use>
-                    </svg>展开</el-button>
+                            <use xlink:href="#icon-qiehuan"></use>
+                        </svg>
+                        <sapn>展开</sapn>
+                    </el-button>
                     <el-button size="mini" v-show="btnchange==3" @click="change"><svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-qiehuan"></use>
-                    </svg>线路</el-button>
+                            <use xlink:href="#icon-qiehuan"></use>
+                        </svg>
+                        <sapn>折叠</sapn>
+                    </el-button>
                     <el-button size="mini" v-show="btnchange==2" @click="change"><svg class="icon" aria-hidden="true">
-                        <use xlink:href="#icon-qiehuan"></use>
-                    </svg>隐藏</el-button>
+                            <use xlink:href="#icon-qiehuan"></use>
+                        </svg>
+                        <sapn>隐藏</sapn>
+                    </el-button>
                 </div>
                 <transition name="tr"> <el-aside class="nav" :width="isCollapse ? '6rem' : '16rem' " v-show="!notis">
                         <el-menu class="up" default-active="0" background-color="#F2F6FC" class="el-menu-vertical-demo"
@@ -152,12 +155,11 @@
                             </el-menu>
                         </div>
                     </el-aside></transition>
-                   
-                
+
+
             </div>
             <div class="main">
                 <iframe :src="url" height="100%" width="100%" frameborder="0"></iframe>
-
             </div>
 
         </div>

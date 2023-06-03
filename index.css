@@ -208,7 +208,7 @@ img {
   /* flex-wrap: nowrap; */
   justify-content: space-between;
   overflow: hidden !important;
-  /* transition: all 0.5s !important; */
+  transition: all 0.2s !important;
   background-color: #F56C6C;
   
 
@@ -217,24 +217,42 @@ img {
   position: relative;
 }
 .fl{
+  display: flex;
+  flex-direction: column;
   position: absolute;
   left: 50%;
   margin-left: 50%;
-  bottom: 10%;
+  top: 10%;
   z-index: 10000 !important;
   /* background-color: #F56C6C; */
 }
 .fl .el-button{
-  padding: 0.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  /* padding: 0.5rem 0.1rem; */
   margin-left: 0rem;
-  border-radius: 0rem 2rem 2rem 0rem;
-  min-height: 2rem;
-  line-height: 2rem;
+  border: none;
+  border-radius: 0rem .5rem .5rem 0rem;
+  min-height: 1.5rem;
+  line-height: 1.5rem;
   background-color: #F2F6FC;
-  color: #050505;
+  color: #000000;
+  box-shadow: .1rem .1rem .1rem #b5b5b5;
+  background: linear-gradient(-135deg, transparent .8rem, #F2F6FC 0),
+             linear-gradient(45deg, transparent 1rem, rgb(242, 81, 102) 0);
 }
+.fl span{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: baseline; */
 
-
+}
+.fl span>sapn{
+  margin-top: .3rem;
+  justify-items: center;
+  writing-mode: vertical-rl;
+  
+}
 /* 动画 */
 @keyframes donghua {
   from {
@@ -245,21 +263,16 @@ img {
   }
 }
 .tr-enter-active{
-  animation: donghua .3s linear;
+  animation: donghua .1s linear;
 }
 .tr-leave-active {
-  animation: donghua .5s linear reverse;
+  animation: donghua .2s linear reverse ;
 }
 
-
-/* @keyframes donghua1 {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0rem);
-  }
-} */
+.if-enter-active,
+.if-leave-active{
+  transition: all .5s linear;
+}
 
 
 
